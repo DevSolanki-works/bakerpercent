@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AnalyticsConsentSettings } from "@/components/AnalyticsConsentSettings";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -46,7 +47,18 @@ export default function PrivacyPage() {
       </section>
 
       <section className="space-y-3">
-        <h2 className="text-lg font-bold text-foreground">5. Contact Information</h2>
+        <h2 className="text-lg font-bold text-foreground">5. Optional Google Analytics</h2>
+        <p>
+          If you choose “Allow analytics,” BakerPercent uses Google Analytics 4 to measure page views and site interactions. The Google Analytics tag is not loaded unless you allow it. If you reject analytics, or withdraw consent below, analytics remains off. Your choice is stored in this browser and does not affect the calculators or your separate advertising privacy choices.
+        </p>
+        <p>
+          Google may process information such as pages visited, browser and device details, and interaction events to provide these reports. See <a className="underline underline-offset-2" href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">How Google handles information from sites or apps that use its services</a> for more details.
+        </p>
+        <AnalyticsConsentSettings />
+      </section>
+
+      <section className="space-y-3">
+        <h2 className="text-lg font-bold text-foreground">6. Contact Information</h2>
         <p>
           For privacy questions or requests, contact <a className="underline underline-offset-2" href="mailto:dev.solanki.works@gmail.com">dev.solanki.works@gmail.com</a>.
         </p>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Calculate artisan sourdough bread formulas with reverse loaf scaling, true total hydration, multi-flour blends, and ambient temperature bulk fermentation guidance.",
   alternates: {
-    canonical: "https://doughratio.pages.dev/",
+    canonical: "https://bakerpercent.com/",
   },
 };
 

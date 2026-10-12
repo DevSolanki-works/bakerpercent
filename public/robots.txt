@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://doughratio.pages.dev/sitemap.xml
+Sitemap: https://bakerpercent.com/sitemap.xml

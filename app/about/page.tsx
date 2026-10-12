@@ -42,7 +42,7 @@ export default function AboutPage() {
           <div className="p-4 rounded-xl bg-surface border border-border-subtle">
             <h3 className="font-bold text-foreground text-sm mb-1">3. Zero Friction</h3>
             <p className="text-xs">
-              100% free, zero accounts, zero trackers, and instant client-side execution that works even if your kitchen Wi-Fi is spotty.
+              Free to use with no account required. Recipe calculations run in your browser, and the core tools remain available when your kitchen Wi-Fi is unreliable.
             </p>
           </div>
         </div>

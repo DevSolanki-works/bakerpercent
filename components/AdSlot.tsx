@@ -26,7 +26,7 @@ export function AdSlot({
         <span>Advertisement</span>
       </div>
       <div className="text-[10px] text-foreground-subtle mt-0.5">
-        Display ads help keep BakerPercent free with no account required.
+        Ad spaces are reserved for future display ads.
       </div>
     </div>
   );

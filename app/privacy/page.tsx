@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | BakerPercent",
+  title: "Privacy Policy",
   description: "Read how BakerPercent handles browser-based recipe calculations, local storage, cookies, and advertising partners.",
 };
 

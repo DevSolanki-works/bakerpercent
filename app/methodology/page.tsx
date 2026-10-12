@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Baker's Percentage Formulas & Methodology | BakerPercent",
+  title: "Baker's Percentage Formulas & Methodology",
   description:
     "Complete mathematical derivations for baker's percentages, reverse loaf weight formulas, starter hydration decomposition, and fermentation temperature kinetics.",
 };

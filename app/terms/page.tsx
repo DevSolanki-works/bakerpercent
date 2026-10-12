@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | BakerPercent Baking Calculators",
+  title: "Terms of Service",
   description: "Terms for using BakerPercent's free bread, sourdough, pizza dough, hydration, and starter feeding calculators.",
 };
 

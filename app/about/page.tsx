@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About BakerPercent | Bread Baking Calculators",
+  title: "About | Bread Baking Calculators",
   description: "Learn why BakerPercent builds practical, browser-based sourdough, pizza dough, hydration, and starter feeding calculators for home bakers.",
 };
 

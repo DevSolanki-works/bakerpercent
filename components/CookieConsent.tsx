@@ -3,6 +3,9 @@
 import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 
+const CONSENT_KEY = "bakerpercent_consent_v1";
+const LEGACY_CONSENT_KEY = "doughratio_consent_v1";
+
 function subscribe(callback: () => void) {
   if (typeof window === "undefined") return () => {};
   window.addEventListener("storage", callback);
@@ -12,7 +15,12 @@ function subscribe(callback: () => void) {
 function getSnapshot(): boolean {
   if (typeof window === "undefined") return false;
   try {
-    return localStorage.getItem("doughratio_consent_v1") !== "accepted";
+    const currentConsent = localStorage.getItem(CONSENT_KEY);
+    const legacyConsent = currentConsent === null ? localStorage.getItem(LEGACY_CONSENT_KEY) : null;
+    if (currentConsent === null && legacyConsent !== null) {
+      localStorage.setItem(CONSENT_KEY, legacyConsent);
+    }
+    return (currentConsent ?? legacyConsent) !== "accepted";
   } catch {
     return false;
   }
@@ -28,7 +36,7 @@ export function CookieConsent() {
 
   const accept = () => {
     try {
-      localStorage.setItem("doughratio_consent_v1", "accepted");
+      localStorage.setItem(CONSENT_KEY, "accepted");
     } catch {
       // Ignore localStorage error
     }

@@ -117,7 +117,9 @@ export function SourdoughCalculator() {
   useEffect(() => {
     const timer = setTimeout(() => {
       try {
-        const saved = localStorage.getItem("doughratio_recipe_v1");
+        const saved =
+          localStorage.getItem("bakerpercent_recipe_v1") ??
+          localStorage.getItem("doughratio_recipe_v1");
         if (saved) {
           const data = JSON.parse(saved);
           if (data.mode) setMode(data.mode);
@@ -155,7 +157,7 @@ export function SourdoughCalculator() {
         ryePct,
         tempCelsius,
       };
-      localStorage.setItem("doughratio_recipe_v1", JSON.stringify(state));
+      localStorage.setItem("bakerpercent_recipe_v1", JSON.stringify(state));
     } catch {
       // Ignore localStorage write errors
     }
@@ -290,7 +292,7 @@ export function SourdoughCalculator() {
   const triggerTimer = (minutes: number, label: string) => {
     if (typeof window !== "undefined") {
       window.dispatchEvent(
-        new CustomEvent("doughratio:start-timer", {
+        new CustomEvent("bakerpercent:start-timer", {
           detail: { minutes, label },
         })
       );
@@ -299,7 +301,7 @@ export function SourdoughCalculator() {
 
   const openTimer = () => {
     if (typeof window !== "undefined") {
-      window.dispatchEvent(new CustomEvent("doughratio:open-timer"));
+      window.dispatchEvent(new CustomEvent("bakerpercent:open-timer"));
     }
   };
 

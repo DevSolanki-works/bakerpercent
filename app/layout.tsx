@@ -73,7 +73,7 @@ export default function RootLayout({
         {/* Prevent Flash of Unstyled Theme */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("doughratio_theme");var d=window.matchMedia("(prefers-color-scheme: dark)").matches;if(t==="dark"||(!t&&d)){document.documentElement.classList.add("dark");}else{document.documentElement.classList.remove("dark");}}catch(e){}})();`,
+            __html: `(function(){try{var t=localStorage.getItem("bakerpercent_theme");if(!t){t=localStorage.getItem("doughratio_theme");if(t){localStorage.setItem("bakerpercent_theme",t);}}var d=window.matchMedia("(prefers-color-scheme: dark)").matches;if(t==="dark"||(!t&&d)){document.documentElement.classList.add("dark");}else{document.documentElement.classList.remove("dark");}}catch(e){}})();`,
           }}
         />
         {/* Schema.org WebApplication */}

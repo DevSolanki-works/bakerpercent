@@ -38,17 +38,17 @@ export default function PrivacyPage() {
       <section className="space-y-3">
         <h2 className="text-lg font-bold text-foreground">4. Cookies &amp; Advertising Partners</h2>
         <p>
-          BakerPercent may partner with third-party advertising vendors (such as Google AdSense) to serve display advertisements that keep the service free. Third-party vendors, including Google, use cookies to serve ads based on a user&rsquo;s prior visits to this or other websites.
+          BakerPercent uses Google AdSense to serve advertisements that help keep the service free. Google and its partners may use cookies or similar technologies to serve ads based on your visits to this or other websites, subject to your settings and applicable consent requirements.
         </p>
         <p>
-          You may opt out of personalized advertising by visiting Google Ads Settings (https://adssettings.google.com) or via the Digital Advertising Alliance at optout.aboutads.info.
+          You can manage personalized advertising through <a className="underline underline-offset-2" href="https://adssettings.google.com/" target="_blank" rel="noreferrer">Google Ads Settings</a> or the <a className="underline underline-offset-2" href="https://optout.aboutads.info/" target="_blank" rel="noreferrer">Digital Advertising Alliance</a>.
         </p>
       </section>
 
       <section className="space-y-3">
         <h2 className="text-lg font-bold text-foreground">5. Contact Information</h2>
         <p>
-          Direct privacy inquiries contact details will be published with the permanent domain. The site currently runs at a temporary hosting address.
+          For privacy questions or requests, contact <a className="underline underline-offset-2" href="mailto:dev.solanki.works@gmail.com">dev.solanki.works@gmail.com</a>.
         </p>
       </section>
     </div>

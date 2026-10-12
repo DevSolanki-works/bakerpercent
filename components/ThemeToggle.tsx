@@ -33,14 +33,14 @@ export function ThemeToggle() {
     if (isDark) {
       document.documentElement.classList.remove("dark");
       try {
-        localStorage.setItem("doughratio_theme", "light");
+        localStorage.setItem("bakerpercent_theme", "light");
       } catch {
         // Ignore localStorage error
       }
     } else {
       document.documentElement.classList.add("dark");
       try {
-        localStorage.setItem("doughratio_theme", "dark");
+        localStorage.setItem("bakerpercent_theme", "dark");
       } catch {
         // Ignore localStorage error
       }

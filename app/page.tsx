@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { SourdoughCalculator } from "@/components/SourdoughCalculator";
-import { AdSlot } from "@/components/AdSlot";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -82,9 +81,6 @@ export default function HomePage() {
         <section id="calculator" className="mb-14">
           <SourdoughCalculator />
         </section>
-
-        {/* Display Ad Slot (Anti-CLS responsive container) */}
-        <AdSlot slotId="doughratio-home-top" format="horizontal" />
 
         {/* Deep Informational & Guide Content (Prevents Thin Content) */}
         <section className="space-y-16 border-t border-border-subtle pt-16">
@@ -193,9 +189,6 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-
-          {/* Secondary Ad Slot */}
-          <AdSlot slotId="doughratio-home-mid" format="horizontal" />
 
           {/* Explore Other Tools Hub Links */}
           <div className="max-w-3xl mx-auto rounded-2xl bg-surface-subtle p-6 border border-border-subtle text-center space-y-4">

@@ -138,11 +138,11 @@ export function KitchenTimer() {
       setIsOpen(true);
     };
 
-    window.addEventListener("doughratio:start-timer", handleStartEvent);
-    window.addEventListener("doughratio:open-timer", handleOpenEvent);
+    window.addEventListener("bakerpercent:start-timer", handleStartEvent);
+    window.addEventListener("bakerpercent:open-timer", handleOpenEvent);
     return () => {
-      window.removeEventListener("doughratio:start-timer", handleStartEvent);
-      window.removeEventListener("doughratio:open-timer", handleOpenEvent);
+      window.removeEventListener("bakerpercent:start-timer", handleStartEvent);
+      window.removeEventListener("bakerpercent:open-timer", handleOpenEvent);
     };
   }, []);
 

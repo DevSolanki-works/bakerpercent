@@ -17,12 +17,14 @@ export default function ContactPage() {
 
       <div className="bg-surface rounded-2xl border border-border-subtle p-6 space-y-4 text-sm text-foreground-muted">
         <p>
-          BakerPercent makes practical tools for home bakers and the artisan bread community. If you notice a calculation issue, want to suggest a flour type, or have an idea for another tool, send feedback using the site where you found us. A direct support address will be published with the permanent domain.
+          BakerPercent makes practical tools for home bakers and the artisan bread community. If you notice a calculation issue, want to suggest a flour type, or have an idea for another tool, email us and we&rsquo;ll review your feedback.
         </p>
 
         <div className="p-4 rounded-xl bg-surface-subtle border border-border-subtle space-y-2">
           <div className="text-xs font-semibold uppercase text-foreground-subtle">Support contact</div>
-          <div className="text-sm text-foreground">Direct email support is being set up for the permanent site launch.</div>
+          <a className="text-sm text-crust-primary underline underline-offset-2" href="mailto:dev.solanki.works@gmail.com">
+            dev.solanki.works@gmail.com
+          </a>
         </div>
 
         <p className="text-xs text-foreground-subtle">

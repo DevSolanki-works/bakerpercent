@@ -30,7 +30,7 @@ export function Navbar() {
               <path d="M8 15c1-1 2.5-1.5 4-1.5s3 .5 4 1.5" />
             </svg>
           </span>
-          <span>Dough<span className="text-crust-primary">Ratio</span></span>
+          <span>Baker<span className="text-crust-primary">Percent</span></span>
         </Link>
 
         {/* Desktop Navigation */}

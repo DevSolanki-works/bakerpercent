@@ -11,7 +11,7 @@ export function Footer() {
               <span className="w-6 h-6 rounded-md bg-crust-primary text-white flex items-center justify-center text-xs">
                 🍞
               </span>
-              <span>Dough<span className="text-crust-primary">Ratio</span></span>
+              <span>Baker<span className="text-crust-primary">Percent</span></span>
             </div>
             <p className="text-xs leading-relaxed text-foreground-subtle">
               The precision baker&rsquo;s math calculator built for artisan sourdough, pizza, and bread makers. Fast, client-side, and designed for kitchen counter ergonomics.

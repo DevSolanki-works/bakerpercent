@@ -1,0 +1,17 @@
+{
+  "name": "DoughRatio — Precision Sourdough Calculator",
+  "short_name": "DoughRatio",
+  "description": "Artisan sourdough and baker's percentage calculator with reverse loaf scaling, true starter hydration, and kitchen screen wake lock.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf8f5",
+  "theme_color": "#b85426",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

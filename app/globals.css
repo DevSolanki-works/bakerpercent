@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #faf8f5;
+  --surface: #ffffff;
+  --surface-subtle: #f4eee6;
+  --foreground: #1c1917;
+  --foreground-muted: #615951;
+  --foreground-subtle: #8c8278;
+  --border-subtle: #e7dfd5;
+  --border-strong: #cfc4b6;
+  --crust-primary: #b85426;
+  --crust-hover: #9c431b;
+  --crust-soft: #fbf0ea;
+  --crust-border: #f2cbba;
+  --wheat-gold: #c9881e;
+  --wheat-soft: #fcf6eb;
+  --status-good-bg: #ecfdf5;
+  --status-good-text: #065f46;
+  --status-good-border: #a7f3d0;
+}
+
+html.dark {
+  --background: #141210;
+  --surface: #1e1b18;
+  --surface-subtle: #292522;
+  --foreground: #f5f2ed;
+  --foreground-muted: #aba398;
+  --foreground-subtle: #7a7369;
+  --border-subtle: #332e29;
+  --border-strong: #4d463f;
+  --crust-primary: #d96833;
+  --crust-hover: #eb7a44;
+  --crust-soft: #2d180f;
+  --crust-border: #592e1a;
+  --wheat-gold: #e5a32b;
+  --wheat-soft: #2b2210;
+  --status-good-bg: #064e3b;
+  --status-good-text: #a7f3d0;
+  --status-good-border: #065f46;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  --color-crust-primary: var(--crust-primary);
+  --color-crust-hover: var(--crust-hover);
+  --color-crust-soft: var(--crust-soft);
+  --color-crust-border: var(--crust-border);
+  --color-wheat-gold: var(--wheat-gold);
+  --color-wheat-soft: var(--wheat-soft);
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom range slider styling for kitchen usability */
+input[type="range"] {
+  accent-color: var(--crust-primary);
+}
+
+/* Subtle dot texture in hero */
+.flour-dots {
+  background-image: radial-gradient(circle, rgba(184, 84, 38, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Print styling for kitchen recipe printout */
+@media print {
+  header, footer, nav, .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .recipe-card {
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+  }
+}

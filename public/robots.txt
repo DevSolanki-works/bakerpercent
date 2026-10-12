@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://doughratio.com/sitemap.xml
+Sitemap: https://doughratio.pages.dev/sitemap.xml

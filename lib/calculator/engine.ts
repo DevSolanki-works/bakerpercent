@@ -275,5 +275,5 @@ Total Flour (including starter): ${outputs.totalFlourGrams}g
 Total Water (including starter): ${outputs.totalWaterGrams}g
 True Total Hydration: ${outputs.trueHydrationPct}%
 
-Calculated via DoughRatio (https://doughratio.com)`;
+Calculated via DoughRatio (https://doughratio.pages.dev)`;
 }

@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <section className="space-y-3 pt-4">
         <h2 className="text-lg font-bold text-foreground">1. Our Commitment to Privacy</h2>
         <p>
-          At DoughRatio (accessible at https://doughratio.com), your privacy is our core priority. We believe simple tools should work locally on your device without harvesting personal information.
+          At DoughRatio (accessible at https://doughratio.pages.dev), your privacy is our core priority. We believe simple tools should work locally on your device without harvesting personal information.
         </p>
       </section>
 

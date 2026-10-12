@@ -14,7 +14,7 @@ export default function TermsPage() {
       <section className="space-y-3 pt-4">
         <h2 className="text-lg font-bold text-foreground">1. Acceptance of Terms</h2>
         <p>
-          By accessing and using DoughRatio (https://doughratio.com), you agree to comply with and be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our service.
+          By accessing and using DoughRatio (https://doughratio.pages.dev), you agree to comply with and be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our service.
         </p>
       </section>
 

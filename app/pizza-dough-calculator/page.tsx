@@ -125,7 +125,7 @@ Total Dough: ${results.totalDough}g (${ballCount} dough balls @ ${ballWeight}g e
 • Salt: ${results.salt}g (${saltPct}%)
 ${results.oil > 0 ? `• Olive Oil: ${results.oil}g (${oilPct}%)\n` : ""}${results.sugar > 0 ? `• Sugar: ${results.sugar}g (${sugarPct}%)\n` : ""}${fermentType === "instantYeast" ? `• Instant Yeast: ${results.yeast}g (${yeastPct}%)` : `• Sourdough Starter: ${results.starter}g (${starterPct}%)`}
 
-Calculated via DoughRatio (https://doughratio.com/pizza-dough-calculator)`;
+Calculated via DoughRatio (https://doughratio.pages.dev/pizza-dough-calculator)`;
 
     navigator.clipboard.writeText(text);
     setCopiedToast(true);

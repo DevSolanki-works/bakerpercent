@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://doughratio.com"),
+  metadataBase: new URL("https://doughratio.pages.dev"),
   title: {
     default: "DoughRatio — Precision Sourdough & Baker's Percentage Calculator",
     template: "%s | DoughRatio",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "DoughRatio — Sourdough & Baker's Percentage Calculator",
     description:
       "Scale recipes backward from loaf count, calculate true total hydration with starter, and estimate bulk fermentation by ambient room temperature.",
-    url: "https://doughratio.com",
+    url: "https://doughratio.pages.dev",
     siteName: "DoughRatio",
     locale: "en_US",
     type: "website",
@@ -84,7 +84,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebApplication",
               name: "DoughRatio Sourdough Calculator",
-              url: "https://doughratio.com",
+              url: "https://doughratio.pages.dev",
               description:
                 "Free precision baker's percentage and sourdough hydration calculator with reverse loaf scaling and ambient temperature fermentation guide.",
               applicationCategory: "UtilityApplication",

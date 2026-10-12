@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Baker's Math Formulas & Methodology | DoughRatio",
+  title: "Baker's Percentage Formulas & Methodology | BakerPercent",
   description:
     "Complete mathematical derivations for baker's percentages, reverse loaf weight formulas, starter hydration decomposition, and fermentation temperature kinetics.",
 };
@@ -18,7 +18,7 @@ export default function MethodologyPage() {
           Formulas &amp; Methodology
         </h1>
         <p className="mt-2 text-sm text-foreground-muted leading-relaxed">
-          Full transparency into every mathematical calculation and biological fermentation curve used across DoughRatio.
+          See the formulas behind BakerPercent's baker&rsquo;s percentage, hydration, loaf scaling, and fermentation estimates.
         </p>
       </div>
 
@@ -85,7 +85,7 @@ export default function MethodologyPage() {
           The rate of fermentation in sourdough is predominantly governed by the temperature dependence of wild yeast (<em>Saccharomyces cerevisiae / Candida humilis</em>) and lactic acid bacteria (<em>Lactobacillus sanfranciscensis</em>).
         </p>
         <p className="text-xs text-foreground-muted leading-relaxed">
-          DoughRatio uses an empirical Q_10 temperature coefficient approximation (Q_10 ≈ 2.1) centered at a baseline of 24°C (75°F) with 20% starter inoculation:
+          BakerPercent uses an empirical Q_10 temperature coefficient approximation (Q_10 ≈ 2.1) centered at a baseline of 24°C (75°F) with 20% starter inoculation:
         </p>
         <div className="bg-surface rounded-xl border border-border-subtle p-5 font-mono text-xs">
           <div className="text-foreground font-bold">

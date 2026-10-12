@@ -1,6 +1,6 @@
 {
-  "name": "DoughRatio — Precision Sourdough Calculator",
-  "short_name": "DoughRatio",
+  "name": "BakerPercent — Sourdough & Baker's Percentage Calculators",
+  "short_name": "BakerPercent",
   "description": "Artisan sourdough and baker's percentage calculator with reverse loaf scaling, true starter hydration, and kitchen screen wake lock.",
   "start_url": "/",
   "display": "standalone",

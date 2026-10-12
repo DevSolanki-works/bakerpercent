@@ -2,15 +2,15 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About DoughRatio | Mission & Craftsmanship",
-  description: "Learn about DoughRatio, an independent precision baking tool built for home and professional artisan bakers.",
+  title: "About BakerPercent | Bread Baking Calculators",
+  description: "Learn why BakerPercent builds practical, browser-based sourdough, pizza dough, hydration, and starter feeding calculators for home bakers.",
 };
 
 export default function AboutPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-8 sm:py-12 space-y-8">
       <div>
-        <h1 className="text-3xl font-extrabold text-foreground tracking-tight">About DoughRatio</h1>
+        <h1 className="text-3xl font-extrabold text-foreground tracking-tight">About BakerPercent</h1>
         <p className="mt-2 text-sm text-foreground-muted">
           Crafting tools that make artisan baking accessible, repeatable, and scientific.
         </p>
@@ -18,10 +18,10 @@ export default function AboutPage() {
 
       <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
         <p>
-          DoughRatio was born out of personal kitchen frustration. Like thousands of sourdough bakers, we loved baking artisan bread but grew tired of clunky desktop spreadsheets, online calculators that didn&rsquo;t work on mobile screens, and having our phone screens go dark while our fingers were covered in sticky dough.
+          BakerPercent began with a practical goal: make baker&rsquo;s math easier to use at the kitchen counter. The free tools help home bakers calculate sourdough formulas, compare added and total hydration, feed a starter, and scale pizza dough without a spreadsheet.
         </p>
         <p>
-          We built DoughRatio around three core principles:
+          BakerPercent is built around three principles:
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">

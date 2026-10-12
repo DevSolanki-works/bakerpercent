@@ -7,11 +7,11 @@ import { CookieConsent } from "@/components/CookieConsent";
 export const metadata: Metadata = {
   metadataBase: new URL("https://doughratio.pages.dev"),
   title: {
-    default: "DoughRatio — Precision Sourdough & Baker's Percentage Calculator",
-    template: "%s | DoughRatio",
+    default: "BakerPercent | Free Bread & Sourdough Calculators",
+    template: "%s | BakerPercent",
   },
   description:
-    "Free artisan sourdough and baker's percentage calculator. Scale dough backward from loaf count, calculate true hydration with starter, and keep your kitchen screen awake.",
+    "Free sourdough, pizza dough, hydration, and starter feeding calculators. Scale bread recipes by baker's percentage and plan dough with clear, practical results.",
   keywords: [
     "sourdough calculator",
     "bakers percentage calculator",
@@ -22,26 +22,26 @@ export const metadata: Metadata = {
     "sourdough starter feeding calculator",
     "bulk fermentation calculator",
   ],
-  authors: [{ name: "DoughRatio Artisan Bakers" }],
-  creator: "DoughRatio",
-  publisher: "DoughRatio",
+  authors: [{ name: "BakerPercent" }],
+  creator: "BakerPercent",
+  publisher: "BakerPercent",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "DoughRatio — Sourdough & Baker's Percentage Calculator",
+    title: "BakerPercent | Free Bread & Sourdough Calculators",
     description:
       "Scale recipes backward from loaf count, calculate true total hydration with starter, and estimate bulk fermentation by ambient room temperature.",
     url: "https://doughratio.pages.dev",
-    siteName: "DoughRatio",
+    siteName: "BakerPercent",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DoughRatio — Sourdough & Baker's Percentage Calculator",
+    title: "BakerPercent | Free Bread & Sourdough Calculators",
     description:
       "Precision artisan sourdough calculator for home and professional bakers.",
   },
@@ -63,7 +63,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#b85426" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="DoughRatio" />
+        <meta name="apple-mobile-web-app-title" content="BakerPercent" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4922314688440658"
@@ -83,7 +83,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              name: "DoughRatio Sourdough Calculator",
+              name: "BakerPercent Baking Calculators",
               url: "https://doughratio.pages.dev",
               description:
                 "Free precision baker's percentage and sourdough hydration calculator with reverse loaf scaling and ambient temperature fermentation guide.",

@@ -7,7 +7,7 @@ import {
   normalizeFlourBlend,
 } from "../engine.ts";
 
-describe("DoughRatio Calculation Engine", () => {
+describe("BakerPercent Calculation Engine", () => {
   it("calculates reverse mode accurately from target loaf count and weight", () => {
     // 2 loaves at 850g each = 1700g total dough
     const res = calculateSourdough({

@@ -169,7 +169,7 @@ export function KitchenTimer() {
         // Browser push notification if supported & permitted
         if (typeof window !== "undefined" && "Notification" in window && Notification.permission === "granted") {
           try {
-            new Notification("DoughRatio Baking Alarm 🍞", {
+            new Notification("BakerPercent Baking Alarm 🍞", {
               body: `${activeLabel} complete! Time for the next step.`,
               icon: "/favicon.svg",
             });

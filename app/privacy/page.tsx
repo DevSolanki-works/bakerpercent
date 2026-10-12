@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | DoughRatio",
-  description: "Privacy policy for DoughRatio: 100% client-side data handling, local storage policies, and third-party advertising transparency.",
+  title: "Privacy Policy | BakerPercent",
+  description: "Read how BakerPercent handles browser-based recipe calculations, local storage, cookies, and advertising partners.",
 };
 
 export default function PrivacyPage() {
@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <section className="space-y-3 pt-4">
         <h2 className="text-lg font-bold text-foreground">1. Our Commitment to Privacy</h2>
         <p>
-          At DoughRatio (accessible at https://doughratio.pages.dev), your privacy is our core priority. We believe simple tools should work locally on your device without harvesting personal information.
+          BakerPercent tools process recipe calculations in your browser. Some preferences are stored locally on your device; advertising partners may use cookies as described below.
         </p>
       </section>
 
@@ -38,7 +38,7 @@ export default function PrivacyPage() {
       <section className="space-y-3">
         <h2 className="text-lg font-bold text-foreground">4. Cookies &amp; Advertising Partners</h2>
         <p>
-          DoughRatio may partner with third-party advertising vendors (such as Google AdSense) to serve display advertisements that keep our service free. Third-party vendors, including Google, use cookies to serve ads based on a user&rsquo;s prior visits to our website or other websites.
+          BakerPercent may partner with third-party advertising vendors (such as Google AdSense) to serve display advertisements that keep the service free. Third-party vendors, including Google, use cookies to serve ads based on a user&rsquo;s prior visits to this or other websites.
         </p>
         <p>
           You may opt out of personalized advertising by visiting Google Ads Settings (https://adssettings.google.com) or via the Digital Advertising Alliance at optout.aboutads.info.
@@ -48,10 +48,7 @@ export default function PrivacyPage() {
       <section className="space-y-3">
         <h2 className="text-lg font-bold text-foreground">5. Contact Information</h2>
         <p>
-          If you have questions regarding this Privacy Policy, contact us at{" "}
-          <a href="mailto:hello@doughratio.com" className="text-crust-primary underline font-medium">
-            hello@doughratio.com
-          </a>.
+          Direct privacy inquiries contact details will be published with the permanent domain. The site currently runs at a temporary hosting address.
         </p>
       </section>
     </div>

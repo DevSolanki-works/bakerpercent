@@ -46,7 +46,7 @@ export function CookieConsent() {
             Privacy &amp; Local Calculations
           </p>
           <p>
-            DoughRatio computes all dough formulations 100% locally in your browser. We use local storage strictly to remember your recipe adjustments and theme preferences.
+            BakerPercent calculates dough formulas in your browser. Local storage remembers your recipe adjustments and theme preferences on this device.
           </p>
           <div className="mt-2.5 flex items-center gap-3">
             <button

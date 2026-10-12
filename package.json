@@ -1,5 +1,5 @@
 {
-  "name": "dough-ratio",
+  "name": "bakerpercent",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "node --test lib/calculator/__tests__/engine.test.ts",
-    "deploy:cloudflare": "npm run build && npx wrangler pages deploy out --project-name=dough-ratio"
+    "deploy:cloudflare": "npm run build && npx wrangler pages deploy out --project-name=bakerpercent"
   },
   "dependencies": {
     "next": "16.4.0",

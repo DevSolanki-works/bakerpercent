@@ -101,7 +101,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between text-xs text-foreground-subtle gap-4">
-          <p>&copy; {new Date().getFullYear()} DoughRatio. All rights reserved. Free for home bakers &amp; culinary students.</p>
+          <p>&copy; {new Date().getFullYear()} BakerPercent. Free calculators for home bakers and culinary students.</p>
           <p className="text-[11px]">
             Tip: Keep Screen Awake mode uses the HTML5 Screen Wake Lock API locally on your device.
           </p>

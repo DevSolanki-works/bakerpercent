@@ -1,4 +1,4 @@
-# DoughRatio — Precision Sourdough & Baker's Percentage Calculator
+# BakerPercent — Free Bread & Sourdough Calculators
 
 A mobile-first, zero-runtime-server artisan bread and baker's math calculator designed to solve real kitchen pain points:
 - **Reverse Loaf Scaling:** Calculate backward from desired loaf count and target weights (e.g., 2 loaves × 850g).

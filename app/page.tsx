@@ -4,7 +4,7 @@ import { AdSlot } from "@/components/AdSlot";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Sourdough Calculator & Baker's Percentage Tool | DoughRatio",
+  title: "Sourdough Calculator & Baker's Percentage Calculator | BakerPercent",
   description:
     "Calculate artisan sourdough bread formulas with reverse loaf scaling, true total hydration, multi-flour blends, and ambient temperature bulk fermentation guidance.",
   alternates: {
@@ -30,7 +30,7 @@ export default function HomePage() {
         name: "What is the difference between added water hydration and true total hydration?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Added water hydration only measures the liquid poured directly into the mixing bowl relative to dry flour. True total hydration includes both the water and flour contained inside your sourdough starter (which is typically 50% water and 50% flour by weight). DoughRatio automatically calculates both so you know your dough's exact wetness.",
+          text: "Added water hydration only measures the liquid poured directly into the mixing bowl relative to dry flour. True total hydration includes both the water and flour contained inside your sourdough starter (which is typically 50% water and 50% flour by weight). BakerPercent calculates both so you can see your dough's total hydration.",
         },
       },
       {
@@ -71,7 +71,7 @@ export default function HomePage() {
         {/* Clean, Modern Header */}
         <section className="text-center max-w-2xl mx-auto mb-6 pt-2">
           <h1 className="text-2xl sm:text-4xl font-extrabold text-foreground tracking-tight">
-            Sourdough <span className="text-crust-primary">&amp; Baker&rsquo;s Ratio</span> Calculator
+            Sourdough <span className="text-crust-primary">&amp; Baker&rsquo;s Percentage</span> Calculator
           </h1>
           <p className="mt-2 text-xs sm:text-sm text-foreground-muted">
             Reverse loaf scaling, true starter hydration, and bulk fermentation timing.
@@ -120,7 +120,7 @@ export default function HomePage() {
               If you start with 1,000g of flour at 75% hydration and 20% starter, you end up with 1,970g of dough. When you divide that into two loaves, each weighs 985g—which may overflow an 8-inch round banneton or touch the Dutch oven lid.
             </p>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              DoughRatio&rsquo;s default <strong>Reverse Mode</strong> lets you specify your exact target output (e.g. <em>2 loaves @ 850g = 1,700g total dough</em>). Our engine uses the mathematical formula:
+              BakerPercent&rsquo;s <strong>reverse scaling</strong> lets you specify your target output (for example, <em>2 loaves at 850g each = 1,700g total dough</em>). The calculator uses:
             </p>
             <div className="bg-surface-subtle rounded-xl p-4 font-mono text-xs text-foreground">
               Base Flour = Total Target Dough Weight ÷ (1 + Hydration% + Starter% + Salt%)
@@ -145,7 +145,7 @@ export default function HomePage() {
               <div className="font-bold text-crust-primary">True Total Hydration = 800 ÷ 1,100 = 72.7%</div>
             </div>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Beginners often wonder why their dough feels much wetter or slacker than expected. DoughRatio automatically breaks down both figures so you can make informed adjustments to flour absorption.
+              Beginners often wonder why their dough feels wetter than expected. BakerPercent shows added-water hydration and true total hydration separately so you can adjust the recipe with both figures in view.
             </p>
           </div>
 

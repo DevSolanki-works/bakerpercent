@@ -53,7 +53,7 @@ export default function PrivacyPage() {
           If you choose “Allow analytics,” BakerPercent uses Google Analytics 4 to measure page views and site interactions. The Google Analytics tag is not loaded unless you allow it. If you reject analytics, or withdraw consent below, analytics remains off. Your choice is stored in this browser and does not affect the calculators or your separate advertising privacy choices.
         </p>
         <p>
-          Google may process information such as pages visited, browser and device details, and interaction events to provide these reports. See <a className="underline underline-offset-2" href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">How Google handles information from sites or apps that use its services</a> for more details.
+          Google may process information such as pages visited, browser and device details, and interaction events to provide these reports. If you copy a recipe, the optional event records only that action and which calculator was used; ingredient values and recipe text are not sent as event parameters. See <a className="underline underline-offset-2" href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">How Google handles information from sites or apps that use its services</a> for more details.
         </p>
         <AnalyticsConsentSettings />
       </section>

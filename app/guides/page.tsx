@@ -14,6 +14,8 @@ const guides = [
   { href: "/guides/troubleshooting", title: "Sourdough troubleshooting by symptom", description: "Work through common dense, slack, gummy, or flat loaves with practical checks and a repeatable bake log." },
   { href: "/guides/pizza-dough", title: "Pizza dough math and workflow", description: "Scale a dough batch with a worked example, understand ball weight, and build a repeatable process for your oven." },
   { href: "/guides/hydration", title: "Sourdough hydration, starter, and flour", description: "Compare hydration conventions, account for starter flour and water, and adjust for a new flour methodically." },
+  { href: "/guides/recipe-scaling", title: "Scale a bread recipe by target dough weight", description: "Follow a complete worked example, keep starter flour accounting straight, and check rounding and process changes." },
+  { href: "/guides/flour-blends", title: "Plan and test a flour blend", description: "Turn blend percentages into grams and compare flours through repeatable, one-variable test bakes." },
 ];
 
 export default function GuidesPage() {
@@ -21,7 +23,7 @@ export default function GuidesPage() {
     <div className="max-w-3xl mx-auto px-4 py-8 sm:py-12 space-y-8">
       <header className="space-y-3">
         <h1 className="text-3xl font-extrabold text-foreground tracking-tight">Baking Guides</h1>
-        <p className="text-sm text-foreground-muted leading-relaxed">A working reference for home bakers: each guide explains a decision, shows the arithmetic or observations behind it, and points out where results depend on your flour, starter, equipment, and kitchen. Use the guides with your own bake notes, not as one-size-fits-all recipes.</p>
+        <p className="text-sm text-foreground-muted leading-relaxed">A practical reference for home bakers. Each guide works through a specific decision with ingredient weights, transparent assumptions, or a repeatable observation method. Use the examples with your own recipe and bake notes; flour, starter, equipment, and kitchen conditions vary.</p>
       </header>
       <div className="space-y-4">
         {guides.map((guide) => <article key={guide.href} className="rounded-xl border border-border-subtle bg-surface p-5 space-y-2">

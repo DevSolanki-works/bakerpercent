@@ -169,6 +169,8 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-3 text-sm">
               <Link href="/guides" className="font-semibold text-crust-primary underline underline-offset-2">Browse all baking guides</Link>
               <Link href="/guides/bakers-percentage" className="font-semibold text-crust-primary underline underline-offset-2">Baker’s percentage example</Link>
+              <Link href="/guides/recipe-scaling" className="font-semibold text-crust-primary underline underline-offset-2">Scale a recipe by target weight</Link>
+              <Link href="/guides/flour-blends" className="font-semibold text-crust-primary underline underline-offset-2">Plan and test a flour blend</Link>
               <Link href="/methodology" className="font-semibold text-crust-primary underline underline-offset-2">Calculation methodology</Link>
             </div>
           </div>

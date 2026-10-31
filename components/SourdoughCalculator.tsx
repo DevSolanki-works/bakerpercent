@@ -8,6 +8,7 @@ import {
   SourdoughInputs,
   FlourBlend,
 } from "@/lib/calculator/engine";
+import { trackAnalyticsEvent } from "@/components/GoogleAnalytics";
 
 interface RecipePreset {
   id: string;
@@ -278,6 +279,7 @@ export function SourdoughCalculator() {
   const handleCopyRecipe = () => {
     const text = formatRecipeText(outputs, "Artisan Country Loaf");
     navigator.clipboard.writeText(text);
+    trackAnalyticsEvent("recipe_copied", { calculator: "sourdough" });
     setCopiedToast(true);
     setTimeout(() => setCopiedToast(false), 2500);
   };

@@ -13,6 +13,22 @@ type GoogleWindow = Window & {
   [key: string]: unknown;
 };
 
+export function trackAnalyticsEvent(
+  eventName: "recipe_copied",
+  parameters: { calculator: "sourdough" | "pizza" },
+) {
+  if (typeof window === "undefined") return;
+
+  try {
+    if (localStorage.getItem(ANALYTICS_CONSENT_KEY) !== "granted") return;
+  } catch {
+    return;
+  }
+
+  const googleWindow = window as unknown as GoogleWindow;
+  googleWindow.gtag?.("event", eventName, parameters);
+}
+
 export function GoogleAnalytics() {
   const pathname = usePathname();
   const [consent, setConsent] = useState<Consent>("unknown");

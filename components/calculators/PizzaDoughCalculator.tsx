@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import { trackAnalyticsEvent } from "@/components/GoogleAnalytics";
 
 interface PizzaStyleConfig {
   name: string;
@@ -128,6 +129,7 @@ ${results.oil > 0 ? `• Olive Oil: ${results.oil}g (${oilPct}%)\n` : ""}${resul
 Calculated with BakerPercent`;
 
     navigator.clipboard.writeText(text);
+    trackAnalyticsEvent("recipe_copied", { calculator: "pizza" });
     setCopiedToast(true);
     setTimeout(() => setCopiedToast(false), 2500);
   };

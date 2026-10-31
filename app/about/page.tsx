@@ -49,6 +49,11 @@ export default function AboutPage() {
         </div>
 
         <p>Educational explanations are kept separate from calculator outputs. Where a guide uses an external baking reference, it links to that source; where this site gives an estimate, the limitations are stated on the page.</p>
+        <section className="rounded-xl border border-border-subtle bg-surface p-5 space-y-3">
+          <h2 className="font-bold text-foreground">Editorial and correction policy</h2>
+          <p>BakerPercent prioritizes worked examples that readers can check with a kitchen scale and a calculator. Formula pages show the assumptions used, including whether starter flour is part of the base flour total. Fermentation timing is presented as a planning estimate because the site does not test each reader’s starter, flour, or kitchen.</p>
+          <p>When a guide relies on an outside explanation, it links to that source. If you find a math error, unclear assumption, broken link, or a useful correction, email the details through the <Link href="/contact" className="text-crust-primary font-semibold hover:underline">contact page</Link>. We review corrections and update the affected page when warranted.</p>
+        </section>
         <p>Start with the <Link href="/guides" className="text-crust-primary font-semibold hover:underline">baking guides</Link> or see the <Link href="/methodology" className="text-crust-primary font-semibold hover:underline">calculation methodology</Link> to understand how the tools work.</p>
 
         <p className="pt-4">

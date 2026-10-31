@@ -1,0 +1,18 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "How to Track Sourdough Bulk Fermentation",
+  description: "A practical method for tracking dough temperature, rise, texture, and timing during sourdough bulk fermentation.",
+  alternates: { canonical: "https://bakerpercent.com/guides/fermentation-timing" },
+};
+
+export default function FermentationTimingGuide() {
+  return <article className="max-w-3xl mx-auto px-4 py-8 sm:py-12 space-y-6 text-sm text-foreground-muted leading-relaxed">
+    <header className="space-y-2"><p className="text-xs text-foreground-subtle"><Link href="/guides" className="underline">Baking Guides</Link> / Fermentation</p><h1 className="text-3xl font-extrabold text-foreground tracking-tight">How to track bulk fermentation</h1><p>A timer can remind you to check dough, but elapsed time by itself cannot tell you when bulk fermentation is complete. Dough temperature, starter activity, formula, and handling change the pace.</p></header>
+    <section className="space-y-2"><h2 className="text-xl font-bold text-foreground">A repeatable check-in routine</h2><ol className="list-decimal space-y-2 pl-5"><li>Record the flour, water, salt, starter amount, and starter condition.</li><li>Measure dough temperature after mixing. Room temperature is useful context, but dough temperature is more direct.</li><li>Mark the dough level in a straight-sided container, or use a small aliquot sample so expansion is easier to compare.</li><li>At regular intervals, note expansion, bubbles, surface shape, elasticity, and whether the dough moves with a gentle jiggle.</li><li>Use the recipe’s shaping cues and your observations together. Do not treat a single rise percentage as universal across recipes and containers.</li></ol></section>
+    <section className="space-y-2"><h2 className="text-xl font-bold text-foreground">Keep a small log</h2><div className="overflow-x-auto"><table className="w-full border-collapse text-left text-xs"><thead><tr className="border-b border-border-subtle text-foreground"><th className="py-2 pr-3">Time</th><th className="py-2 pr-3">Dough temp</th><th className="py-2 pr-3">Rise / bubbles</th><th className="py-2">Texture / note</th></tr></thead><tbody>{["Mix", "Check 1", "Check 2", "Shaping decision"].map((row) => <tr className="border-b border-border-subtle" key={row}><td className="py-2 pr-3">{row}</td><td className="py-2 pr-3">Record</td><td className="py-2 pr-3">Observe</td><td className="py-2">Write what changed</td></tr>)}</tbody></table></div><p>After a few bakes, compare similar formulas rather than trying to make one timing rule fit every dough.</p></section>
+    <section className="space-y-2"><h2 className="text-xl font-bold text-foreground">What can shift the schedule?</h2><p>Starter amount and maturity, desired dough temperature, flour, salt, dough hydration, folds, and holding temperature all interact. King Arthur Baking’s <a className="underline" href="https://www.kingarthurbaking.com/blog/2019/07/22/bulk-fermentation" target="_blank" rel="noreferrer">bulk fermentation guide</a> discusses recipe, temperature, and dough cues; use it as context alongside the formula you are following.</p></section>
+    <p className="rounded-xl bg-surface-subtle border border-border-subtle p-4">The <Link className="font-semibold text-crust-primary underline" href="/">sourdough calculator</Link> provides a broad planning estimate. Read the <Link className="font-semibold text-crust-primary underline" href="/methodology">methodology and limits</Link> before using it as a schedule.</p>
+  </article>;
+}

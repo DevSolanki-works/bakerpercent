@@ -153,10 +153,8 @@ export function normalizeFlourBlend(blend: FlourBlend): FlourBlend {
 /**
  * Ambient Temperature Bulk Fermentation Estimator
  * 
- * Fermentation kinetics baseline:
- * At 75°F (24°C) with 20% starter inoculation: typical bulk fermentation takes ~4.5 - 5.5 hours.
- * Every 5°F (2.8°C) change shifts rate by ~25-35%.
- * Starter inoculation percentage inversely affects time.
+ * Planning heuristic only. Fermentation timing varies with starter activity,
+ * dough temperature, flour, salt, and handling; use visual dough cues.
  */
 export interface FermentationEstimate {
   tempCelsius: number;
@@ -172,12 +170,12 @@ export function estimateBulkFermentation(tempCelsius: number, starterPct: number
   const f = Math.round((c * 9) / 5 + 32);
   const s = Math.max(5, Math.min(40, starterPct));
 
-  // Baseline at 24°C (75°F) with 20% starter is ~5.0 hours
-  // Q10 temperature coefficient approximation for sourdough kinetics (~2.1)
+  // Simple planning baseline at 24°C (75°F) with 20% starter.
+  // This is a heuristic, not a measured or validated fermentation model.
   const tempFactor = Math.pow(2.1, (24 - c) / 10);
   const starterFactor = 20 / s;
 
-  const baseHours = 5.0 * tempFactor * Math.sqrt(starterFactor);
+  const baseHours = 5.0 * tempFactor * starterFactor;
   const minHours = Number(Math.max(1.5, baseHours * 0.85).toFixed(1));
   const maxHours = Number(Math.max(2.0, baseHours * 1.2).toFixed(1));
 
@@ -187,7 +185,7 @@ export function estimateBulkFermentation(tempCelsius: number, starterPct: number
   else if (c <= 20) targetRise = 75; // Cold dough needs more volume before fridge
 
   const cues = [
-    `Target dough volume rise: approximately ${targetRise}% (do not wait for 100% doubling)`,
+    `Reference rise marker: about ${targetRise}%; rise is only one cue, not a universal shaping threshold`,
     "Surface is slightly domed with smooth, semi-translucent skin",
     "Visible small fermentation bubbles underneath surface and along container walls",
     "Gentle bowl shake reveals a soft, aerated, gelatinous jiggle",
@@ -228,20 +226,21 @@ export function calculateStarterFeed(
   const waterGrams = Math.round(partWeight * ratioParts.water);
   const flourGrams = Math.round(targetGrams - starterSeedGrams - waterGrams);
 
-  let peakMin = 4;
-  let peakMax = 6;
   const ratioMultiple = ratioParts.flour / ratioParts.seed;
+  // Broad reference windows at 26°C / 79°F, not a promise for an individual
+  // culture. Higher feed ratios generally take longer to peak.
+  let baseline: [number, number];
+  if (ratioMultiple <= 1) baseline = [4, 6]; // 1:1:1
+  else if (ratioMultiple <= 2) baseline = [6, 9]; // 1:2:2
+  else if (ratioMultiple <= 3) baseline = [8, 12]; // 1:3:3
+  else baseline = [10, 16]; // 1:5:5 and larger feeds
 
-  if (ratioMultiple <= 1) { // 1:1:1
-    peakMin = tempCelsius >= 25 ? 3 : 4;
-    peakMax = tempCelsius >= 25 ? 5 : 6;
-  } else if (ratioMultiple <= 3) { // 1:2:2
-    peakMin = tempCelsius >= 25 ? 5 : 6;
-    peakMax = tempCelsius >= 25 ? 7 : 9;
-  } else { // 1:5:5 or higher
-    peakMin = tempCelsius >= 25 ? 8 : 10;
-    peakMax = tempCelsius >= 25 ? 12 : 14;
-  }
+  // Temperature adjustment is intentionally a simple Q10-style heuristic.
+  const boundedTemp = Math.max(16, Math.min(32, tempCelsius));
+  const tempFactor = Math.pow(2.1, (26 - boundedTemp) / 10);
+  const roundHalfHour = (hours: number) => Math.max(1.5, Math.round(hours * 2) / 2);
+  const peakMin = roundHalfHour(baseline[0] * tempFactor);
+  const peakMax = roundHalfHour(baseline[1] * tempFactor);
 
   return {
     starterSeedGrams,

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "BakerPercent | Free Bread & Sourdough Calculators",
     description:
-      "Scale recipes backward from loaf count, calculate true total hydration with starter, and estimate bulk fermentation by ambient room temperature.",
+      "Scale a formula, calculate total hydration with starter included, and use a fermentation time range as a prompt to check your dough.",
     url: "https://bakerpercent.com",
     siteName: "BakerPercent",
     locale: "en_US",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BakerPercent | Free Bread & Sourdough Calculators",
     description:
-      "Precision artisan sourdough calculator for home and professional bakers.",
+      "Browser-based baker’s percentage and dough calculators with practical guides for home bakers.",
   },
   icons: {
     icon: "/favicon.svg",
@@ -87,7 +87,7 @@ export default function RootLayout({
               name: "BakerPercent Baking Calculators",
               url: "https://bakerpercent.com",
               description:
-                "Free precision baker's percentage and sourdough hydration calculator with reverse loaf scaling and ambient temperature fermentation guide.",
+                "Free baker's percentage and sourdough hydration calculators with recipe scaling and a caveated fermentation planning estimate.",
               applicationCategory: "UtilityApplication",
               operatingSystem: "Any",
               offers: {

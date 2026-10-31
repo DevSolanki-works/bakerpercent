@@ -22,40 +22,40 @@ export default function SourdoughHydrationCalculatorPage() {
 
   // Determine Crumb Profile
   let crumbProfile = {
-    level: "Classic Open Crumb",
+    level: "Moderate hydration",
     color: "text-crust-primary",
     bgColor: "bg-crust-soft",
     borderColor: "border-crust-border",
-    difficulty: "Intermediate",
-    description: "The classic Tartine style. Golden blistered crust, custardy interior, and irregular artisan aeration. Holds sandwich toppings without leaking.",
+    difficulty: "Context matters",
+    description: "Hydration is one clue about dough handling, not a crumb prediction. Flour, mixing, fermentation, shaping, and baking all affect the result.",
   };
 
   if (trueHydrationPct < 66) {
     crumbProfile = {
-      level: "Tight Sandwich Crumb",
+      level: "Lower hydration",
       color: "text-emerald-700 dark:text-emerald-300",
       bgColor: "bg-emerald-50 dark:bg-emerald-950/40",
       borderColor: "border-emerald-200 dark:border-emerald-800",
-      difficulty: "Beginner Friendly",
-      description: "Dense, uniform crumb that slices easily. Dough holds shape with minimal gluten development and is very easy to score.",
+      difficulty: "Often firmer to handle",
+      description: "A lower water-to-flour ratio often makes dough feel firmer, but flour type and mixing still affect extensibility and the baked crumb.",
     };
   } else if (trueHydrationPct < 73) {
     crumbProfile = {
-      level: "Balanced Artisan Crumb",
+      level: "Moderate hydration",
       color: "text-blue-700 dark:text-blue-300",
       bgColor: "bg-blue-50 dark:bg-blue-950/40",
       borderColor: "border-blue-200 dark:border-blue-800",
-      difficulty: "Beginner – Easy",
-      description: "The sweet spot for home bakers. Moderate aeration, good ear formation, and forgiving dough handling during preshaping.",
+      difficulty: "A starting point",
+      description: "Use this ratio as a comparison point, then adjust for your flour and recipe. Hydration alone cannot forecast an open crumb or ear.",
     };
   } else if (trueHydrationPct >= 82) {
     crumbProfile = {
-      level: "Wild Open Crumb / Ciabatta",
+      level: "Very high hydration",
       color: "text-purple-700 dark:text-purple-300",
       bgColor: "bg-purple-50 dark:bg-purple-950/40",
       borderColor: "border-purple-200 dark:border-purple-800",
-      difficulty: "Advanced / Expert",
-      description: "Extreme hydration. Translucent, gelatinous crumb with large irregular air pockets. Requires high-protein flour (13%+) and gentle coil folds.",
+      difficulty: "Can be challenging to handle",
+      description: "A very high water-to-flour ratio can make dough slack or sticky. Flour absorption and dough strength vary, so add water gradually and follow a recipe suited to your flour.",
     };
   }
 
@@ -69,7 +69,7 @@ export default function SourdoughHydrationCalculatorPage() {
           Sourdough Hydration Calculator
         </h1>
         <p className="mt-2 text-sm sm:text-base text-foreground-muted leading-relaxed">
-          Discover your recipe&rsquo;s true total hydration by accounting for water contributed by your sourdough starter, and forecast your baked crumb structure.
+          Compare added-water hydration with total hydration after counting the flour and water in your starter. The result describes a ratio; it does not predict crumb structure.
         </p>
       </div>
 
@@ -152,7 +152,7 @@ export default function SourdoughHydrationCalculatorPage() {
         <div className={`p-5 rounded-xl border ${crumbProfile.bgColor} ${crumbProfile.borderColor}`}>
           <div className="flex items-center justify-between mb-2">
             <span className={`font-bold text-sm ${crumbProfile.color}`}>
-              Crumb Structure: {crumbProfile.level}
+              Hydration note: {crumbProfile.level}
             </span>
             <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-surface border border-border-subtle text-foreground">
               {crumbProfile.difficulty}
@@ -164,46 +164,50 @@ export default function SourdoughHydrationCalculatorPage() {
         </div>
       </div>
 
-      {/* Deep Educational Guide to Flour Absorption */}
+      {/* Educational Guide to Flour Absorption */}
       <section id="flour-types" className="space-y-6 max-w-3xl mx-auto text-sm text-foreground-muted leading-relaxed">
         <h2 className="text-2xl font-bold text-foreground">Flour Absorption &amp; Hydration Limits</h2>
         <p>
-          Hydration is not an absolute number; it is relative to the thirst of your flour. Different grains and milling types absorb dramatically different amounts of water:
+          Hydration is calculated from weights, but the same percentage can feel different with different flours. Protein level, extraction, milling, freshness, and whole-grain content influence how a dough handles. Treat the notes below as tendencies, not fixed absorption limits:
         </p>
 
         <div className="divide-y divide-border-subtle bg-surface rounded-2xl border border-border-subtle overflow-hidden text-xs">
           <div className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <strong className="text-foreground block text-sm">Bread Flour (12.7%–14% Protein)</strong>
-              <span>High gluten network. Handles 75%–82% hydration effortlessly with strong elasticity.</span>
+              <span>Protein percentage can offer a rough clue, but it does not guarantee a specific water capacity or dough strength.</span>
             </div>
-            <span className="font-mono font-bold text-crust-primary sm:text-right">75%–82% Capacity</span>
+            <span className="font-mono font-bold text-crust-primary sm:text-right">Test with your flour</span>
           </div>
 
           <div className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <strong className="text-foreground block text-sm">All-Purpose Flour (10.5%–11.5% Protein)</strong>
-              <span>Moderate gluten. Tends to slacken and puddle above 72% hydration unless mixed with bread flour.</span>
+              <span>Brands and batches differ. Begin with a trusted formula and add reserved water gradually if the dough can absorb it.</span>
             </div>
-            <span className="font-mono font-bold text-foreground-muted sm:text-right">65%–72% Capacity</span>
+            <span className="font-mono font-bold text-foreground-muted sm:text-right">No universal cutoff</span>
           </div>
 
           <div className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <strong className="text-foreground block text-sm">Whole Wheat Flour (Bran &amp; Germ)</strong>
-              <span>Wheat bran acts like tiny sponges, absorbing up to 25% more water than refined white endosperm.</span>
+              <span>Whole-grain particles and bran change water absorption and dough feel. A short rest can help you judge whether more water is useful.</span>
             </div>
-            <span className="font-mono font-bold text-wheat-gold sm:text-right">80%–90% Capacity</span>
+            <span className="font-mono font-bold text-wheat-gold sm:text-right">Adjust gradually</span>
           </div>
 
           <div className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
               <strong className="text-foreground block text-sm">Rye Flour</strong>
-              <span>Contains high levels of pentosans (mucilage) which absorb huge water volumes with virtually zero gluten elasticity.</span>
+              <span>Rye behaves differently from wheat because its structure and gluten-forming properties differ. Use a rye-specific formula to guide hydration.</span>
             </div>
-            <span className="font-mono font-bold text-purple-600 sm:text-right">82%–95% Capacity</span>
+            <span className="font-mono font-bold text-purple-600 sm:text-right">Use a rye formula</span>
           </div>
         </div>
+
+        <p className="text-xs leading-relaxed">
+          For an independent discussion of how flour and starter affect dough feel and total hydration, see <a className="underline underline-offset-2" href="https://www.kingarthurbaking.com/blog/2023/01/11/bread-hydration" target="_blank" rel="noreferrer">King Arthur Baking’s hydration guide</a>. A hydration percentage is useful for comparing formulas, but it is not a direct prediction of crumb openness.
+        </p>
 
         <div className="pt-6 flex justify-center">
           <Link

@@ -23,7 +23,7 @@ const PIZZA_STYLES: Record<string, PizzaStyleConfig> = {
     defaultSugar: 0,
     defaultYeast: 0.15,
     defaultBallWeight: 260,
-    description: "Crisp leopard-spotted crust, baked at 850°F–950°F (450°C). Zero oil or sugar.",
+    description: "A common Neapolitan-style starting formula. Traditional recipes and home ovens vary; adjust the preset to your flour and equipment.",
   },
   ny: {
     name: "New York Style (Baking Steel / Stone)",
@@ -33,7 +33,7 @@ const PIZZA_STYLES: Record<string, PizzaStyleConfig> = {
     defaultSugar: 1.5,
     defaultYeast: 0.4,
     defaultBallWeight: 320,
-    description: "Foldable slice with tender chew. Olive oil preserves moisture; sugar aids caramelization in 500°F–550°F home ovens.",
+    description: "A New York-style starting point with optional oil and sugar. Adjust the formula to your recipe and oven.",
   },
   detroit: {
     name: "Detroit Style Pan / Sicilian",
@@ -43,7 +43,7 @@ const PIZZA_STYLES: Record<string, PizzaStyleConfig> = {
     defaultSugar: 1.0,
     defaultYeast: 0.5,
     defaultBallWeight: 450,
-    description: "Thick, airy focaccia-like crumb with crispy cheese-crusted edges baked in a deep steel pan.",
+    description: "A pan-pizza starting point with more dough per pan. Pan dimensions, toppings, and bake method affect the result.",
   },
 };
 
@@ -143,7 +143,7 @@ Calculated with BakerPercent`;
           Pizza Dough Calculator
         </h1>
         <p className="mt-2 text-sm sm:text-base text-foreground-muted leading-relaxed">
-          Scale dough balls for Neapolitan, New York style, or Detroit pan pizza. Precise baker&rsquo;s percentages for home ovens or high-heat pizza ovens.
+          Scale dough balls for Neapolitan, New York style, or Detroit pan pizza. Presets are editable starting points; your flour, oven, pan, and schedule affect the result.
         </p>
       </div>
 
@@ -325,7 +325,7 @@ Calculated with BakerPercent`;
                     className="w-full h-1.5 rounded-lg bg-surface-subtle cursor-pointer"
                   />
                   <div className="text-[10px] text-foreground-subtle mt-0.5">
-                    Use 0.15%–0.3% for 24–72 hour cold ferment in refrigerator.
+                    This preset is not a fermentation schedule. Yeast amount, dough temperature, refrigerator temperature, and time all interact; use a tested recipe and monitor the dough.
                   </div>
                 </div>
               ) : (
@@ -412,9 +412,9 @@ Calculated with BakerPercent`;
           </div>
 
           <div className="mt-6 p-3.5 rounded-xl bg-wheat-soft border border-wheat-gold/30 text-xs text-foreground-muted space-y-1">
-            <span className="font-bold text-foreground block">💡 Pro Fermentation Tip:</span>
+            <span className="font-bold text-foreground block">Planning note:</span>
             <span>
-              Mix, knead until smooth, rest for 2 hours at room temp, portion into {ballCount} balls, and place in oiled containers in the fridge for 24 to 72 hours for maximum flavor and blistered crust.
+              This calculator scales ingredient weights; it does not calculate proofing or refrigeration time. Follow a schedule tested for your yeast, dough temperature, refrigerator, and flour, and check the dough as it ferments.
             </span>
           </div>
         </div>
@@ -425,17 +425,17 @@ Calculated with BakerPercent`;
         <h2 className="text-2xl font-bold text-foreground">The Science of Pizza Dough Hydration</h2>
         <div className="space-y-4 text-sm text-foreground-muted leading-relaxed">
           <p>
-            The secret to pizzeria-quality pizza at home is matching your dough hydration to your oven&rsquo;s maximum temperature. 
+            Hydration is one choice in a pizza formula, alongside flour, mixing, fermentation, shaping, and baking. The style presets below are editable examples rather than fixed standards; recipes within each style vary.
           </p>
           <ul className="list-disc list-inside space-y-2 ml-2">
             <li>
-              <strong>Neapolitan (60% Hydration):</strong> Designed for 900°F (480°C) wood-fired ovens. At such intense heat, pizzas bake in 60–90 seconds. Higher hydration would result in a gummy, undercooked center.
+              <strong>Neapolitan-style preset:</strong> The default is a moderate-hydration dough. Traditional Neapolitan methods use very hot ovens, while home ovens have different heat and bake times. A hydration change alone cannot predict whether the center will bake through.
             </li>
             <li>
-              <strong>New York Style (65% Hydration + Oil &amp; Sugar):</strong> Standard home ovens max out around 500°F–550°F (260°C–285°C), taking 5–8 minutes to bake on a preheated baking steel. Adding 2% olive oil coats gluten strands to keep the crust supple, while 1.5% sugar prevents pale crusts by caramelizing at lower home temperatures.
+              <strong>New York-style preset:</strong> The example includes oil and sugar, both of which are optional formula choices. Oven calibration, steel or stone, dough thickness, and toppings change bake time and browning.
             </li>
             <li>
-              <strong>Detroit / Pan Style (70%–75% Hydration):</strong> High water content creates massive steam pockets during baking, producing an airy, light focaccia texture under heavy Wisconsin brick cheese and red sauce.
+              <strong>Pan-pizza preset:</strong> A more hydrated dough may feel softer, but pan size, dough strength, fermentation, and handling also influence the baked texture. Adjust water gradually if your flour behaves differently.
             </li>
           </ul>
         </div>

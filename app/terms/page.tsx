@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms for using BakerPercent's free bread, sourdough, pizza dough, hydration, and starter feeding calculators.",
+  alternates: { canonical: "https://bakerpercent.com/terms" },
 };
 
 export default function TermsPage() {
@@ -24,7 +26,7 @@ export default function TermsPage() {
           BakerPercent provides free mathematical calculation utilities, baker&rsquo;s percentage calculators, and fermentation guidance for informational and recreational baking purposes.
         </p>
         <p>
-          While our mathematical formulas are mathematically precise, baking outcomes depend on environmental factors including flour moisture, ambient humidity, yeast viability, and oven accuracy. All calculators and fermentation time windows are provided &ldquo;as is&rdquo; without warranty of any kind. Always inspect your dough for visual cues and food safety standards.
+          The calculators apply the formulas described on the methodology page, with some displayed values rounded for readability. Baking outcomes depend on factors including flour, dough and room temperature, culture activity, and equipment. Calculator results and fermentation time windows are provided &ldquo;as is&rdquo; without warranty of any kind. Use a recipe suited to your ingredients and observe your dough.
         </p>
       </section>
 
@@ -44,9 +46,7 @@ export default function TermsPage() {
 
       <section className="space-y-3">
         <h2 className="text-lg font-bold text-foreground">5. Contact</h2>
-        <p>
-          Direct contact details for questions about these Terms will be published with the permanent domain.
-        </p>
+        <p>For questions about these terms, use the <Link href="/contact" className="underline">contact page</Link> or email <a className="underline" href="mailto:dev.solanki.works@gmail.com">dev.solanki.works@gmail.com</a>.</p>
       </section>
     </div>
   );

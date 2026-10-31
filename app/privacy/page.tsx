@@ -4,6 +4,7 @@ import { AnalyticsConsentSettings } from "@/components/AnalyticsConsentSettings"
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Read how BakerPercent handles browser-based recipe calculations, local storage, cookies, and advertising partners.",
+  alternates: { canonical: "https://bakerpercent.com/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -25,7 +26,7 @@ export default function PrivacyPage() {
           All recipe calculations, baker&rsquo;s percentages, loaf scaling, and ambient temperature adjustments occur entirely in your web browser using client-side JavaScript. 
         </p>
         <p>
-          We do not transmit your recipe formulas or personal notes to any remote web server or database. We utilize your browser&rsquo;s native <code>localStorage</code> purely to remember your last entered recipe preferences (such as loaf count and hydration percentage) so your recipe is saved when you revisit the site. You can clear this data at any time by clearing your browser cache.
+          Recipe calculations run in your browser; the site does not have a recipe account or recipe database. Browser storage is used for local interface preferences and your analytics choice. Clearing this site&rsquo;s browser data removes those saved values.
         </p>
       </section>
 

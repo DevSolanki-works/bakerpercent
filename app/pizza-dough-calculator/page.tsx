@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PizzaDoughCalculator from "@/components/calculators/PizzaDoughCalculator";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pizza Dough Calculator: Baker's Percentages & Dough Balls",
@@ -8,5 +9,12 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <PizzaDoughCalculator />;
+  return <><PizzaDoughCalculator />
+    <article className="mx-auto max-w-3xl space-y-7 px-4 pb-14 text-sm leading-relaxed text-foreground-muted">
+      <section className="space-y-3"><h2 className="text-2xl font-bold text-foreground">How to size pizza dough balls</h2><p>Dough ball weight is a practical starting point, not a strict diameter conversion. A thin 12-inch pizza usually needs less dough than a thick pan pie of the same width. Pan depth, rim preference, dough relaxation, and stretching technique all change the final shape.</p><p>For example, four 320 g balls require 1,280 g of dough. If the formula uses 65% water, 2.5% salt, 2% oil, 1.5% sugar, and 0.4% instant yeast, the total formula multiplier is 1.714. Divide 1,280 by 1.714 to estimate about 747 g flour; calculate each ingredient from that flour weight. The calculator performs this scaling and rounds ingredient weights, so small differences in the sum are expected.</p></section>
+      <section className="space-y-3"><h2 className="text-xl font-bold text-foreground">What the style presets mean</h2><p>The presets are editable formula starting points, not claims of a single canonical regional recipe. A lower hydration dough may be easier to handle in a home oven; a wetter dough can spread more and needs flour and technique that support it. Oil and sugar can change browning and tenderness, especially in home ovens, but they are optional and should follow the recipe and desired result.</p><p>Yeast percentage alone cannot determine fermentation time. Yeast type, dough temperature, refrigeration, and schedule interact. Use a tested recipe’s fermentation method, observe dough expansion, and change yeast only with a plan. For sourdough, starter acidity and activity add further variability.</p></section>
+      <section className="space-y-3"><h2 className="text-xl font-bold text-foreground">A repeatable mixing and fermentation workflow</h2><ol className="list-decimal space-y-2 pl-5"><li>Weigh ingredients in grams and reserve a little water if you are unsure how your flour handles the selected hydration.</li><li>Mix until no dry flour remains, then rest briefly if the formula allows. Add salt and any reserved water as directed by your recipe.</li><li>Record dough temperature after mixing; it is more useful for comparing batches than room temperature alone.</li><li>Divide by weight, form balls with consistent surface tension, and cover them so they do not dry out.</li><li>Follow your recipe’s room-temperature or cold fermentation plan and judge readiness by the dough, not the calculator’s ingredient output.</li></ol></section>
+      <section className="space-y-3"><h2 className="text-xl font-bold text-foreground">Adjust one variable at a time</h2><p>If dough tears while stretching, it may need rest, more gluten development, or a different fermentation point. If it sticks, flour strength, hydration, handling, and temperature may be involved. Keep a simple log of flour brand, percentages, dough temperature, proof conditions, and bake result. A few comparable batches will tell you more than changing hydration, yeast, and proof time all at once.</p><p>For the percentage arithmetic, see our <Link href="/guides/bakers-percentage" className="underline">baker’s math worked example</Link>. If you bake sourdough too, the <Link href="/sourdough-hydration-calculator" className="underline">hydration calculator</Link> explains how starter changes total flour and water.</p></section>
+    </article>
+  </>;
 }

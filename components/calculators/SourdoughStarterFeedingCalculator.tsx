@@ -9,34 +9,34 @@ export default function StarterFeedingCalculatorPage() {
   const [selectedRatio, setSelectedRatio] = useState<string>("1:2:2");
   const [roomTempCelsius, setRoomTempCelsius] = useState<number>(22);
 
-  const ratios: Record<string, { seed: number; water: number; flour: number; desc: string; peakDesc: string }> = {
+  const ratios: Record<string, { seed: number; water: number; flour: number; desc: string; timingNote: string }> = {
     "1:1:1": {
       seed: 1,
       water: 1,
       flour: 1,
-      desc: "Fast rise. Ideal for same-day morning baking or feeding a sluggish starter.",
-      peakDesc: "3 to 5 hours at room temperature",
+      desc: "A smaller feed relative to the seed often peaks sooner. Useful when your baking schedule calls for a shorter interval.",
+      timingNote: "Lower feed amount",
     },
     "1:2:2": {
       seed: 1,
       water: 2,
       flour: 2,
-      desc: "Standard bake-day feed. Perfect for feeding before work or late morning.",
-      peakDesc: "6 to 8 hours at room temperature",
+      desc: "A common everyday feed. Compare the estimate with your starter's actual rise pattern before setting a bake time.",
+      timingNote: "Moderate feed amount",
     },
     "1:3:3": {
       seed: 1,
       water: 3,
       flour: 3,
-      desc: "Overnight feed for standard 70°F (21°C) kitchens. Ready when you wake up.",
-      peakDesc: "8 to 10 hours at room temperature",
+      desc: "A larger feed may take longer than a 1:1:1 or 1:2:2 feed. It may or may not fit an overnight schedule in your kitchen.",
+      timingNote: "Larger feed amount",
     },
     "1:5:5": {
       seed: 1,
       water: 5,
       flour: 5,
-      desc: "High dilution feed. Ideal for warm summer kitchens or extended 12+ hour overnight rests.",
-      peakDesc: "10 to 14 hours at room temperature",
+      desc: "A high feed ratio gives the seed more flour and water relative to its starting mass. Check the culture before relying on an overnight schedule.",
+      timingNote: "High feed amount",
     },
   };
 
@@ -53,7 +53,7 @@ export default function StarterFeedingCalculatorPage() {
           Sourdough Starter Feeding Calculator
         </h1>
         <p className="mt-2 text-sm sm:text-base text-foreground-muted leading-relaxed">
-          Scale your feeding quantities to build the exact amount of ripe starter needed for your dough with zero discard waste.
+          Scale the seed, water, and flour toward a target amount. The peak-time range is only a planning estimate; follow your starter&rsquo;s rise and texture.
         </p>
       </div>
 
@@ -117,7 +117,7 @@ export default function StarterFeedingCalculatorPage() {
               >
                 <div className="font-mono text-base">{ratioKey}</div>
                 <div className="text-[10px] text-foreground-subtle mt-0.5 font-normal">
-                  {ratios[ratioKey].peakDesc.split(" at ")[0]}
+                  {ratios[ratioKey].timingNote}
                 </div>
               </button>
             ))}
@@ -155,9 +155,12 @@ export default function StarterFeedingCalculatorPage() {
           </div>
 
           <div className="pt-2 text-xs text-foreground-muted flex items-center justify-between border-t border-wheat-gold/20">
-            <span>Estimated Peak Rise Window:</span>
+            <span>Rough peak-time estimate:</span>
             <span className="font-bold text-foreground font-mono">{feedResult.estimatedPeakHours}</span>
           </div>
+          <p className="text-xs leading-relaxed text-foreground-subtle">
+            This is a broad starting window, not a timer or guarantee. Starter maturity and activity, flour, water, and actual starter temperature can shift the peak substantially. Watch for expansion, bubbles, and a top that is just reaching its highest point. See the <Link href="/guides/starter-feeding" className="underline underline-offset-2 hover:text-foreground">starter feeding guide</Link> for the assumptions and source notes.
+          </p>
         </div>
       </div>
 
@@ -167,15 +170,15 @@ export default function StarterFeedingCalculatorPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
           <div className="p-4 rounded-xl bg-surface border border-border-subtle space-y-1">
             <strong className="text-foreground block">1. Domed to Flat Top</strong>
-            <p>A rising starter has a convex (domed) center. When it levels out flat, it has peaked and is at maximum yeast activity.</p>
+            <p>A dome that begins to flatten can indicate that the starter is near its high point. Rise shape is one cue; compare it with bubbles, texture, and the pattern you have observed in your own starter.</p>
           </div>
           <div className="p-4 rounded-xl bg-surface border border-border-subtle space-y-1">
             <strong className="text-foreground block">2. Sponge Webbing</strong>
-            <p>Look through the glass jar: you should see vertical aeration channels and a webbed, honeycomb gluten network.</p>
+            <p>Look for bubbles throughout the culture and visible expansion against a mark on the jar. The pattern varies with flour and starter consistency.</p>
           </div>
           <div className="p-4 rounded-xl bg-surface border border-border-subtle space-y-1">
             <strong className="text-foreground block">3. Pleasant Aroma</strong>
-            <p>Should smell sweet, fruity, and mildly alcoholic—not intensely vinegary or nail-polish-like (which indicates hunger).</p>
+            <p>Smell can change with feeding and culture conditions. Aroma alone cannot diagnose starter health; consider rise, bubbles, and whether the culture has been maintained safely.</p>
           </div>
         </div>
 

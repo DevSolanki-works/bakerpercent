@@ -37,7 +37,7 @@ export default function HomePage() {
         name: "How much sourdough starter should I use in my bread recipe?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Standard artisan sourdough recipes typically use 15% to 20% starter relative to total flour weight. For a long, slow overnight bulk fermentation in cool kitchens, 10% to 15% is recommended. In warm kitchens (above 78°F / 25°C), reducing starter inoculation prevents overproofing.",
+          text: "There is no single starter percentage that fits every recipe. The amount changes fermentation speed and flavor, and the result depends on starter activity, dough temperature, flour, and schedule. Start with the ratio in a recipe you trust, then record and adjust for your own kitchen.",
         },
       },
       {
@@ -45,7 +45,7 @@ export default function HomePage() {
         name: "How do I calculate ingredients backward from my desired loaf weight?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Divide your desired total dough weight by the sum of all baker's percentages (Flour 100% + Hydration % + Starter % + Salt %). For example, if you want a 900g loaf at 75% hydration, 20% starter, and 2% salt, divide 900 by 1.97 to get ~457g of base flour.",
+          text: "Divide the target dough mass by 1 plus the chosen hydration, starter, salt, and yeast percentages expressed as decimals. For example, 75% hydration, 20% starter, and 2% salt gives a multiplier of 1.97; a 900g target uses about 457g base flour before ingredient rounding.",
         },
       },
       {
@@ -53,7 +53,7 @@ export default function HomePage() {
         name: "How does ambient room temperature affect bulk fermentation?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Wild yeast and lactic acid bacteria ferment significantly faster in warm environments. At 75°F (24°C), bulk fermentation typically takes 4.5 to 5.5 hours. At 68°F (20°C), it can take 7 to 9 hours. Higher temperatures also require shaping at lower volume increases (45-50% rise) to prevent overproofing during handling.",
+          text: "Warmer dough often ferments faster, but the timing depends on starter activity, dough temperature, flour, salt, and handling. Use the calculator range as a reminder to check the dough, not as a stop time; look for the signs and recipe guidance that match your formula.",
         },
       },
     ],
@@ -72,8 +72,8 @@ export default function HomePage() {
           <h1 className="text-2xl sm:text-4xl font-extrabold text-foreground tracking-tight">
             Sourdough <span className="text-crust-primary">&amp; Baker&rsquo;s Percentage</span> Calculator
           </h1>
-          <p className="mt-2 text-xs sm:text-sm text-foreground-muted">
-            Reverse loaf scaling, true starter hydration, and bulk fermentation timing.
+            <p className="mt-2 text-xs sm:text-sm text-foreground-muted">
+            Reverse loaf scaling, total starter hydration, and a temperature-based fermentation planning estimate.
           </p>
         </section>
 
@@ -110,10 +110,10 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto space-y-4">
             <h2 className="text-2xl font-bold text-foreground">Why Reverse Loaf Scaling Matters</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Most online calculators force you to guess an arbitrary starting flour weight (like 500g or 1,000g). But home bakers have physical constraints: your banneton proofing baskets and Dutch ovens are designed for specific dough volumes—typically <strong>750g, 850g, or 900g per loaf</strong>.
+              A baker may want a batch sized for a particular loaf count and target piece weight. Reverse scaling starts with that target instead of requiring a starting flour quantity.
             </p>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              If you start with 1,000g of flour at 75% hydration and 20% starter, you end up with 1,970g of dough. When you divide that into two loaves, each weighs 985g—which may overflow an 8-inch round banneton or touch the Dutch oven lid.
+              For example, 1,000g flour at 75% added water, 20% starter, and 2% salt gives about 1,970g total dough. Dividing that in two gives pieces of about 985g before rounding.
             </p>
             <p className="text-sm text-foreground-muted leading-relaxed">
               BakerPercent&rsquo;s <strong>reverse scaling</strong> lets you specify your target output (for example, <em>2 loaves at 850g each = 1,700g total dough</em>). The calculator uses:
@@ -122,7 +122,7 @@ export default function HomePage() {
               Base Flour = Total Target Dough Weight ÷ (1 + Hydration% + Starter% + Salt%)
             </div>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              You get zero wasted dough and perfectly portioned loaves every single bake.
+              This estimates ingredient weights for a chosen target mass. The displayed ingredients are rounded, so their sum can differ slightly from the target; shaping capacity and bake loss also depend on your equipment and process.
             </p>
           </div>
 
@@ -149,21 +149,27 @@ export default function HomePage() {
           <div className="max-w-3xl mx-auto space-y-4">
             <h2 className="text-2xl font-bold text-foreground">Temperature &amp; Bulk Fermentation Kinetics</h2>
             <p className="text-sm text-foreground-muted leading-relaxed">
-              Commercial bakeries control dough temperatures with proofing cabinets set to 78°F (25°C). Home kitchens, however, fluctuate with the seasons. A recipe written for a 78°F kitchen that advises &ldquo;bulk ferment for 4 hours&rdquo; will leave your dough severely underproofed in a 66°F (19°C) winter kitchen, or hopelessly overproofed on an 82°F (28°C) summer afternoon.
+              Temperature affects fermentation speed, but room temperature alone does not tell you when dough is ready. Dough temperature, starter maturity and amount, flour, salt, hydration, and handling all matter. King Arthur Baking notes that bulk time depends on the recipe, desired dough temperature, and holding temperature; its <a href="https://www.kingarthurbaking.com/blog/2019/07/22/bulk-fermentation" target="_blank" rel="noreferrer" className="text-crust-primary font-semibold hover:underline">bulk-fermentation guide</a> describes expansion, strength, and aeration cues. Our timer range is a planning reminder. Use it to check the dough, not as a stop time.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-              <div className="bg-surface rounded-xl border border-border-subtle p-4">
-                <div className="font-bold text-foreground mb-1">Cool Kitchen (66°F–69°F / 19°C–21°C)</div>
-                <p className="text-foreground-muted">Sluggish yeast activity. Expect 7 to 9 hours of bulk fermentation. Aim for a 75% volume rise before shaping.</p>
-              </div>
-              <div className="bg-surface rounded-xl border border-border-subtle p-4">
-                <div className="font-bold text-crust-primary mb-1">Optimal Range (74°F–77°F / 23°C–25°C)</div>
-                <p className="text-foreground-muted">Balanced yeast and bacterial acid production. Expect 4.5 to 5.5 hours. Aim for a 55–65% volume rise.</p>
-              </div>
-              <div className="bg-surface rounded-xl border border-border-subtle p-4">
-                <div className="font-bold text-foreground mb-1">Warm Kitchen (80°F–84°F / 27°C–29°C)</div>
-                <p className="text-foreground-muted">Rapid fermentation. Can finish in under 3.5 hours. Shape early at 40–50% rise to prevent gluten breakdown.</p>
-              </div>
+            <div className="rounded-xl border border-border-subtle bg-surface p-5 text-sm text-foreground-muted leading-relaxed">
+              <h3 className="font-bold text-foreground">A useful check-in routine</h3>
+              <ol className="mt-2 list-decimal space-y-1 pl-5">
+                <li>Measure dough temperature when you mix, not only the room temperature.</li>
+                <li>Use a clear-sided container or a small sample to notice volume change.</li>
+                <li>Look for aeration, a smoother surface, and a soft jiggle as the dough develops.</li>
+                <li>Record the time and temperature for your next bake; your starter&rsquo;s pattern is more useful than a universal timer.</li>
+              </ol>
+              <Link href="/guides/fermentation-timing" className="mt-3 inline-block text-crust-primary font-semibold hover:underline">Read the fermentation timing guide →</Link>
+            </div>
+          </div>
+
+          <div className="max-w-3xl mx-auto rounded-2xl bg-surface border border-border-subtle p-6 space-y-3">
+            <h2 className="text-xl font-bold text-foreground">Learn how the calculations work</h2>
+            <p className="text-sm text-foreground-muted leading-relaxed">Read practical explanations with worked examples for scaling formulas, feeding a starter, and tracking fermentation. Timing notes include their assumptions and limits.</p>
+            <div className="flex flex-wrap gap-3 text-sm">
+              <Link href="/guides" className="font-semibold text-crust-primary underline underline-offset-2">Browse all baking guides</Link>
+              <Link href="/guides/bakers-percentage" className="font-semibold text-crust-primary underline underline-offset-2">Baker’s percentage example</Link>
+              <Link href="/methodology" className="font-semibold text-crust-primary underline underline-offset-2">Calculation methodology</Link>
             </div>
           </div>
 

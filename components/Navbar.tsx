@@ -15,6 +15,7 @@ export function Navbar() {
     { href: "/pizza-dough-calculator", label: "Pizza Dough" },
     { href: "/sourdough-hydration-calculator", label: "Hydration Guide" },
     { href: "/sourdough-starter-feeding-calculator", label: "Starter Feeding" },
+    { href: "/guides", label: "Baking Guides" },
     { href: "/methodology", label: "Methodology" },
   ];
 

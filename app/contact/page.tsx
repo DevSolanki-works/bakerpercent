@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact | Feedback & Calculator Support",
   description: "Share feedback, report a calculator issue, or suggest a baking tool for BakerPercent.",
+  alternates: { canonical: "https://bakerpercent.com/contact" },
 };
 
 export default function ContactPage() {

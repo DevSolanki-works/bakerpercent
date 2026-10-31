@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Baker's Percentage Formulas & Methodology",
   description:
-    "Complete mathematical derivations for baker's percentages, reverse loaf weight formulas, starter hydration decomposition, and fermentation temperature kinetics.",
+    "Formulas and practical limits for baker’s percentages, recipe scaling, starter hydration, and the site’s fermentation estimates.",
+  alternates: { canonical: "https://bakerpercent.com/methodology" },
 };
 
 export default function MethodologyPage() {
@@ -18,7 +19,7 @@ export default function MethodologyPage() {
           Formulas &amp; Methodology
         </h1>
         <p className="mt-2 text-sm text-foreground-muted leading-relaxed">
-          See the formulas behind BakerPercent's baker&rsquo;s percentage, hydration, loaf scaling, and fermentation estimates.
+          See the formulas behind BakerPercent&apos;s baker&rsquo;s percentage, hydration, loaf scaling, and fermentation estimates.
         </p>
       </div>
 
@@ -82,18 +83,28 @@ export default function MethodologyPage() {
       <section id="fermentation-temperature" className="space-y-4">
         <h2 className="text-xl font-bold text-foreground">4. Fermentation Kinetics Model</h2>
         <p className="text-xs text-foreground-muted leading-relaxed">
-          The rate of fermentation in sourdough is predominantly governed by the temperature dependence of wild yeast (<em>Saccharomyces cerevisiae / Candida humilis</em>) and lactic acid bacteria (<em>Lactobacillus sanfranciscensis</em>).
+          Fermentation timing depends on a range of factors, including dough and room temperature, starter activity, flour, and handling. This calculator uses a simple planning heuristic, not a tested or validated fermentation prediction.
         </p>
         <p className="text-xs text-foreground-muted leading-relaxed">
-          BakerPercent uses an empirical Q_10 temperature coefficient approximation (Q_10 ≈ 2.1) centered at a baseline of 24°C (75°F) with 20% starter inoculation:
+            The code uses a five-hour reference at 24°C (75°F) and 20% starter, then applies a temperature adjustment and a direct inverse starter-percentage adjustment:
         </p>
         <div className="bg-surface rounded-xl border border-border-subtle p-5 font-mono text-xs">
           <div className="text-foreground font-bold">
-            Estimated Bulk Hours = 5.0 × (2.1 ^ ((24 - Temp_Celsius) / 10)) × √(20 / Starter%)
+            Estimated Bulk Hours = 5.0 × (2.1 ^ ((24 - Temp_Celsius) / 10)) × (20 / Starter%)
           </div>
         </div>
         <p className="text-xs text-foreground-muted leading-relaxed">
-          Because biological activity accelerates non-linearly at higher temperatures, target volume increases before shaping are dynamically decreased from 75% rise at 19°C (66°F) to 45% rise at 28°C (82°F) to prevent dough degradation during final shaping and bench rest.
+          This simple equation omits starter maturity and activity, flour blend, dough temperature history, salt, mixing, and handling. Its time range and rise marker are prompts for observation, not instructions for when every dough should be shaped. Compare your dough with the recipe you are using and look for visible expansion, aeration, strength, and a gentle jiggle. A useful overview of these cues and the way desired dough temperature changes timing is available from <a className="underline underline-offset-2" href="https://www.kingarthurbaking.com/blog/2019/07/22/bulk-fermentation" target="_blank" rel="noreferrer">King Arthur Baking’s bulk fermentation guide</a>.
+        </p>
+      </section>
+
+      <section className="space-y-4 border-t border-border-subtle pt-8">
+        <h2 className="text-xl font-bold text-foreground">Sources and scope</h2>
+        <p className="text-xs text-foreground-muted leading-relaxed">
+          Baker&rsquo;s percentage and total hydration are arithmetic conventions. For an independent explanation of flour-relative percentages and counting the water and flour in a starter, see <a className="underline underline-offset-2" href="https://www.kingarthurbaking.com/blog/2022/04/28/what-is-bakers-math-and-how-can-i-use-it-in-my-everyday-bread-baking" target="_blank" rel="noreferrer">King Arthur Baking’s baker&rsquo;s math article</a> and its <a className="underline underline-offset-2" href="https://www.kingarthurbaking.com/blog/2023/01/11/bread-hydration" target="_blank" rel="noreferrer">bread hydration explanation</a>. Our dough and starter timing outputs are practical approximations; they are not derived from controlled tests of every flour, starter, or kitchen.
+        </p>
+        <p className="text-xs text-foreground-muted leading-relaxed">
+          Explore the worked <Link href="/guides" className="text-crust-primary font-semibold hover:underline">baking guides</Link>, or report a correction through the <Link href="/contact" className="text-crust-primary font-semibold hover:underline">contact page</Link>.
         </p>
       </section>
 

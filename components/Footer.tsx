@@ -14,7 +14,7 @@ export function Footer() {
               <span>Baker<span className="text-crust-primary">Percent</span></span>
             </div>
             <p className="text-xs leading-relaxed text-foreground-subtle">
-              The precision baker&rsquo;s math calculator built for artisan sourdough, pizza, and bread makers. Fast, client-side, and designed for kitchen counter ergonomics.
+              Free browser-based baker&rsquo;s math calculators for sourdough, pizza, and bread. Ingredient calculations run on your device.
             </p>
           </div>
 
@@ -22,6 +22,11 @@ export function Footer() {
           <div>
             <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground mb-3">Calculators</h3>
             <ul className="space-y-2 text-xs">
+              <li>
+                <Link href="/guides" className="hover:text-crust-primary transition-colors">
+                  Baking Guides
+                </Link>
+              </li>
               <li>
                 <Link href="/" className="hover:text-crust-primary transition-colors">
                   Sourdough Calculator

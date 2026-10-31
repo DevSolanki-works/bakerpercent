@@ -44,7 +44,7 @@ export const TIMER_PRESETS: TimerPreset[] = [
     name: "Dutch Oven (Lid On)",
     icon: "♨️",
     minutes: 20,
-    description: "Steam-trapping stage for maximum oven spring and ear expansion.",
+    description: "Covered-bake reminder; trapped steam can support crust expansion while the loaf bakes.",
   },
   {
     id: "bake-lid-off",
